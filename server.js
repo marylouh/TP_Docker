@@ -1,5 +1,5 @@
 import express from 'express' ;
-import formulaireApiRoute from 'formulaire-api-route.js';
+import formulaireApiRoute from './formulaire-api-route.js';
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -13,10 +13,10 @@ app.use(jsonParser);
 
 //les routes en /html/... seront gérées par express
 //par de simples renvois des fichiers statiques du répertoire "./html"
-app.use('/html', express.static(__dirname+"/html"));
+//app.use('/html', express.static(__dirname+"/html"));
 
 app.get('/', function(req , res ) {
-   res.redirect('/html/index.html');
+    res.sendFile(__dirname+"/html/index.html")
 });
 
 //delegate REST API routes to apiRouter(s) :
