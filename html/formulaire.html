@@ -6,14 +6,15 @@
     <title>Mon formulaire</title>
   </head>
   <body>
+    <!-- <form onsubmit="event.preventDefault(); return afficherNom(name)"> -->
     <form>
       <label for="name">Entrez votre nom :</label>
       <input type="text" id="name" name="name">
       <!-- <input type="button" value="Send" id="sendName" onclick="afficherNom(name)" /> -->
-        <button class="btn btn-primary"  (click)="afficherNom(name)">
+        <button class="submit"  (click)="afficherNom(name)">
             <span>Send</span> 
         </button>
     </form>
-    <span  id="spanRes"></span> 
+    <span  id="spanRes"></span>
   </body>
 </html>

@@ -1,6 +1,5 @@
 import express from 'express' ;
-
-import formulaire from './formulaire.js';
+import formulaireApiRoute from './formulaire-api-route.js';
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -21,7 +20,7 @@ app.get('/', function(req , res ) {
 });
 
 //delegate REST API routes to apiRouter(s) :
-app.use(formulaire.apiRouter);
+app.use(formulaireApiRoute.apiRouter);
 
 app.listen(8282 , function () {
    console.log("http://localhost:8282");
