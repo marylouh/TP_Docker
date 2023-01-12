@@ -1,17 +1,14 @@
 import express from 'express';
 const apiRouter = express.Router();
 
-window.addEventListener("load",()=>{
-
-	var name = document.getElementById("name");
-
-    afficherNom(name);
-
-    //name.style.display="block";
-
-
+apiRouter.route('/formulaire')
+.get( function(req , res , next ) {
+    var name = req.params.name;
+    res.send(name);
 });
 
 function afficherNom(name){
-var message = "Bonjour " + name + " ... Vous êtes bien matinal ..."; 
-}
+    var name =  document.getElementById("name");
+	var message = "Bonjour " + name + " ... Vous êtes bien matinal ..."; 
+	document.getElementById("spanRes").innerHTML="<b>"+message+"</b>";
+}    
