@@ -1,17 +1,17 @@
 import express from 'express';
-const apiRouter = express.Router();
+const apiRouter = express.Router(); 
 
-apiRouter.route('/formulaire')
+function afficherNom(name){
+    var name =  document.getElementById("name");
+	var message = "Bonjour " + name + " ... Vous êtes bien matinal ..."; 
+	document.getElementById("spanRes").innerHTML="<b>"+message+"</b>";
+}
+
+apiRouter.route('/formulaire-api/name')
 .get( function(req, res) {
     var name = req.body;
-    var message = "Bonjour " + name + " ... Vous êtes bien matinal ...";
-    res.send(message);
+    afficherNom(name);
+    res.send(name);
 });
-
-// function afficherNom(name){
-//     var name =  document.getElementById("name");
-// 	var message = "Bonjour " + name + " ... Vous êtes bien matinal ..."; 
-// 	document.getElementById("spanRes").innerHTML="<b>"+message+"</b>";
-// }
 
 export default { apiRouter }

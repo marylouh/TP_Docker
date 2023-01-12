@@ -1,17 +1,18 @@
   <h3>TP Docker</h3>
   <!DOCTYPE html>
 <html>
-    <script src="./formulaire.js" ></script>
+    <script src="../formulaire-api-route.js" ></script>
   <head>
     <title>Mon formulaire</title>
   </head>
   <body>
-    <!-- <form onsubmit="event.preventDefault(); return afficherNom(name)"> -->
-    <form>
+    <form onsubmit="event.preventDefault(); ">
+    <!-- <form> -->
       <label for="name">Entrez votre nom :</label>
       <input type="text" id="name" name="name">
-      <!-- <input type="button" value="Send" id="sendName" onclick="afficherNom(name)" /> -->
-        <button class="submit"  (click)="afficherNom(name)">
+      <!--<input type="button" value="Send" id="sendName" onclick="afficherNom()" /> -->
+      <!-- <input type="button" value="Send" id="sendName"/> -->
+      <button class="submit" (click)="javascript:window.location.href-'/formulaire-api/name'">
             <span>Send</span> 
         </button>
     </form>
