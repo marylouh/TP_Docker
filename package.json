@@ -2,11 +2,14 @@
   "name": "tp_docker",
   "version": "1.0.0",
   "description": "TP_Docker",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
