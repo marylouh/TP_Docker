@@ -1,5 +1,32 @@
+<!DOCTYPE html>
 <html>
-<body>
-    <a href="formulaire.html">Formulaire</a>
-</body>
+  <head>
+    <title>Mon formulaire</title>
+  </head>
+  <body>
+    <form id="form" onsubmit="event.preventDefault(); return setAction(this)">
+    <!-- <form> -->
+      <label for="name">Entrez votre nom :</label>
+      <input type="text" id="name" name="name">
+      <!--<input type="button" value="Send" id="sendName" onclick="afficherNom()" /> -->
+      <!-- <input type="button" value="Send" id="sendName"/> -->
+      <button class="submit" type="submit">Send</button>
+    </form>
+    <div class="spanRes"></div>
+    <script>
+      function setAction(form) {
+	  const url = "/" + form.name.value;
+	  fetch(url, {
+	      headers: { "Content-Type": "application/json" },
+	      method: "GET"
+	  })
+	      .then(data => data.json())
+	      .then((json) => {
+		  document.getElementById("form").reset();
+		  document.getElementsByClassName("spanRes")[0].innerHTML = JSON.stringify(json);
+	      });
+	  return false;
+      }
+    </script>
+  </body>
 </html>
